@@ -3,7 +3,7 @@ package Staff;
 public abstract class Employee {
     private String name;
     private int niNumber;
-    private double salary;
+    public double salary;
 
     public Employee(String name, int niNumber, double salary){
         this.name = name;
@@ -24,11 +24,16 @@ public abstract class Employee {
     }
 
     public void raiseSalary(double raise){
-        salary += raise;
+        if (raise > 0){
+        salary += raise;}
     }
 
     public double payBonus(){
         return (salary * 0.01);
+    }
+
+    public void setName(String newName){
+        name = newName;
     }
 
 }
